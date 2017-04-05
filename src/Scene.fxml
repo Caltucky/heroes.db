@@ -117,5 +117,7 @@
             </TableView>
          </children>
       </AnchorPane>
+      <Button fx:id="execute" layoutX="34.0" layoutY="68.0" mnemonicParsing="false" onMouseClicked="#execute" text="Execute" />
+      <Button fx:id="accuracy" layoutX="94.0" layoutY="68.0" mnemonicParsing="false" onMouseClicked="#accuracy" text="Accuracy" />
    </children>
 </AnchorPane>

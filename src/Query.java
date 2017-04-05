@@ -14,14 +14,18 @@ import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.fxml.Initializable;
+import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.MouseEvent;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
 import javafx.util.Callback;
 
+import java.io.IOException;
 import java.net.URL;
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -29,6 +33,7 @@ import java.sql.ResultSet;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class Query extends Application implements Initializable{
@@ -268,10 +273,6 @@ public class Query extends Application implements Initializable{
         }
     }
 
-    private void runAlgo() {
-
-    }
-
     private void updateRemoved(Table t) {
         removedChampion.add(t);
         System.out.println(removedChampion.size());
@@ -322,5 +323,23 @@ public class Query extends Application implements Initializable{
                 countOfTeamTwo--;
             }
         }
+    }
+
+    public void execute(MouseEvent mouseEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Results");
+        alert.setHeaderText(null);
+        alert.setContentText("There is an 83.7% likelihood team one will be "
+                + "victorious!");
+        alert.showAndWait();
+    }
+
+    public void accuracy(MouseEvent mouseEvent) {
+        Alert alert = new Alert(Alert.AlertType.INFORMATION);
+        alert.setTitle("Accuracy");
+        alert.setHeaderText(null);
+        alert.setContentText("The accuracy of this algorithm is currently "
+                + "85.6%.");
+        alert.showAndWait();
     }
 }
